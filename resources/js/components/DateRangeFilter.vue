@@ -117,6 +117,7 @@ export default {
       value = value.map(value => {
         return flatpickr.formatDate(value, 'Y-m-d')
       });
+      value.push((new Date).getTimezoneOffset());
       this.$store.commit(`${this.resourceName}/updateFilterState`, {
         filterClass: this.filterKey,
         value,
